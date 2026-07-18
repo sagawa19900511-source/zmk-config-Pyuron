@@ -33,8 +33,14 @@
     };
 };
 
-&trackball_split_L {
+&trackball_listener_L {
+    status = "okay";
     device = <&trackball_L>;
+};
+
+&trackball_listener_R {
+    status = "okay";
+    device = <&trackball_split_R>;
 };
 
 &spi0 {
