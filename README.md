@@ -25,11 +25,11 @@
 
 ## ファームウェアの書き込み
 
-### 手順1. PCと右側ボードを接続します。
+### 手順1. PCと左側ボードを接続します。
 ### 手順2. 表にあるリセットスイッチ用のボタンを2回素早く押すとブートローダーが起動して"XIAO SENSE"として認識されます。
 ### 手順3. まずは"XIAO SENSE"ドライブに"settings_reset-seeeduino_xiao_ble-zmk.uf2"を書き込みます。
-### 手順4. 次に同じ手順でブートローダーを起動し"Pyuron_R rgbled_adapter-seeeduino_xiao_ble-zmk"を書き込みます。
-### 手順5. 右側が終わったら左側も同じように"settings_reset-seeeduino_xiao_ble-zmk.uf2"から"Pyuron_L rgbled_adapter-seeeduino_xiao_ble-zmk"を書き込みます。
+### 手順4. 次に同じ手順でブートローダーを起動し"Pyuron_L rgbled_adapter-seeeduino_xiao_ble-zmk"を書き込みます。
+### 手順5. 左側が終わったら右側も同じように"settings_reset-seeeduino_xiao_ble-zmk.uf2"から"Pyuron_R rgbled_adapter-seeeduino_xiao_ble-zmk"を書き込みます。
 ### 手順6. 書き込みが完了したら念の為1回リセットボタンを押してください。
 ### 手順7. 左右どちらも電源をオンにしたあとにBlutoothデバイスの追加から"Pyuron"を選択し、接続ができたらファームウェアの書き込みは完了です。
 
