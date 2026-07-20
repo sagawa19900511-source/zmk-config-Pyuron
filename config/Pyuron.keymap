@@ -1,13 +1,37 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
 #define MOUSE 6
+#define AUTO_MOUSE 7
+#define LEFT_SCROLL 8
 
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
+};
+
+&trackball_listener_L {
+    input-processors =
+        <&zip_temp_layer AUTO_MOUSE 2000>,
+        <&zip_xy_transform
+            (INPUT_TRANSFORM_XY_SWAP |
+             INPUT_TRANSFORM_X_INVERT)>;
+
+    left_scroll {
+        layers = <LEFT_SCROLL>;
+        input-processors =
+            <&zip_temp_layer AUTO_MOUSE 2000>,
+            <&zip_xy_transform
+                (INPUT_TRANSFORM_XY_SWAP |
+                 INPUT_TRANSFORM_X_INVERT |
+                 INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_xy_scaler 1 16>,
+            <&zip_scroll_scaler 1 5>,
+            <&zip_xy_to_scroll_mapper>;
+    };
 };
 
 / {
@@ -99,6 +123,24 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
+            >;
+        };
+
+        AUTO_MOUSE {
+            bindings = <
+&trans  &mkp RCLK  &mkp MCLK        &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &mo LEFT_SCROLL  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans           &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans           &trans     &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        LEFT_SCROLL {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
