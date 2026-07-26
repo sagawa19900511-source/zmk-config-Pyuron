@@ -128,10 +128,10 @@
 
         AUTO_MOUSE {
             bindings = <
-&mo 7   &mkp RCLK  &mo 8      &trans     &trans     &kp LS(LG(NUMBER_4))  &trans  &trans  &trans  &trans
-&trans  &trans     &mkp MCLK  &mkp LCLK  &kp ESC    &trans                &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &trans                &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &kp LC(V)  &kp LC(C)             &trans  &trans  &trans  &trans
+&mo 7   &mkp RCLK  &mo 8      &trans     &trans   &kp LS(LG(NUMBER_4))  &trans  &trans  &trans  &trans
+&trans  &trans     &mkp MCLK  &mkp LCLK  &kp ESC  &trans                &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans   &trans                &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans   &trans                &trans  &trans  &trans  &trans
             >;
         };
 
