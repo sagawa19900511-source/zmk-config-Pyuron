@@ -43,8 +43,8 @@ trackball_listener_R: trackball_listener_R {
             (INPUT_TRANSFORM_XY_SWAP |
              INPUT_TRANSFORM_Y_INVERT)>,
         <&zip_xy_scaler 1 16>,
-        <&zip_scroll_scaler 1 5>,
-        <&zip_xy_to_scroll_mapper>;
+        <&zip_xy_to_scroll_mapper>,
+        <&zip_scroll_scaler 1 2>;
 };
 
     default_transform: keymap_transform_0 {
